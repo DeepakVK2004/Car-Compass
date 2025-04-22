@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Car Compass</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Car Compass">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard">
+        <h1>Welcome, {{ username }}!</h1>
+        <p>This is your dashboard. You are successfully logged in.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Car Compass. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

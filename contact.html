@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Car Compass</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>    
+    </nav>
+
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need help? Get in touch with us!</p>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Email: <a href="mailto:deepak.dv2004@gmail.com">deepak.dv2004@gmail.com</a></p>
+            <p>Phone: +91 9920244680</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Car Compass. All Rights Reserved.</p>
+        <a href="{{ url_for('home') }}" class="home-btn">Home</a>
+    </footer>
+
+</body>
+</html>

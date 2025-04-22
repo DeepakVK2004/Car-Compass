@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Compass - Premium Cars Dealers</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <span>deepak.dv2004@gmail.com | Mon to Fri: 9:00 AM to 6:00 PM | Mumbai, India</span>
+        </div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Car Compass">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+            <div class="auth-links">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="login-btn">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Car Recommendation Services</h2>
+            <p>Expert Suggestions</p>
+        </div>
+    </section>
+
+    <!-- Search Box -->
+    <section class="search-box">
+        <form action="{{ url_for('search') }}" method="POST">
+            <div class="search-container">
+                <select name="price_range" required>
+                    <option value="">Select Price Range</option>
+                    {% for price in price_ranges %}
+                        <option value="{{ price }}">{{ price }}</option>
+                    {% endfor %}
+                </select>
+                <select name="car_type" required>
+                    <option value="">Select Car Type</option>
+                    {% for type in car_types %}
+                        <option value="{{ type }}">{{ type }}</option>
+                    {% endfor %}
+                </select>
+                <select name="fuel_type" required>
+                    <option value="">Select Fuel Type</option>
+                    {% for fuel in fuel_types %}
+                        <option value="{{ fuel }}">{{ fuel }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h2>Welcome to <span class="highlight">Car Compass</span></h2>
+        <p>Helping you find your dream car easily.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:deepak.dv2004@gmail.com">deepak.dv2004@gmail.com</a></p>
+            <p>Phone: +91 9920244680</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Car Compass. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

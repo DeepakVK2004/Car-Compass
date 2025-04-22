@@ -1,0 +1,233 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1e1e2d;
+    color: white;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.top-bar .btn {
+    background: red;
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.top-bar .btn:hover {
+    background: darkred;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align logo left & links right */
+    align-items: center;
+    padding: 10px 20px;
+    background: #222; /* Background color */
+}
+
+.logo img {
+    width: 140px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Space between links */
+    list-style: none;
+    margin-left: auto; /* Push links to the right */
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* Hero Section */
+.hero {
+    background: url("../static/images/hero.jpg") no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+/* Search Box */
+.search-box {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.search-box:hover {
+    transform: scale(1.03);
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-container select, .search-container .search-btn {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-btn {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* Sections */
+.welcome, .about, .contact {
+    text-align: center;
+    padding: 60px 20px;
+    background: #28283d;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background-color: black;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Center the form on the page */
+.form-container {
+    width: 350px; /* Adjust width as needed */
+    margin: 50px auto; /* Center horizontally */
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+}
+
+/* Ensure input fields are stacked properly */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0; /* Add spacing between inputs */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block; /* Forces new line */
+}
+
+/* Center the submit button */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px; /* Add spacing above button */
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Car Compass</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>    
+    </nav>
+
+    <section class="about">
+        <div class="about-container">
+            <h2>About Car Compass</h2>
+            <p>Car Compass is your trusted platform to find the perfect car based on your needs, budget, and preferences.</p>
+            <p>We use expert insights to help you make informed car-buying decisions.</p>
+            <p>Our mission is to simplify the car search process and provide the best recommendations tailored for you.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Car Compass. All Rights Reserved.</p>
+        <a href="{{ url_for('home') }}" class="home-btn">Home</a>
+    </footer>
+
+</body>
+</html>
